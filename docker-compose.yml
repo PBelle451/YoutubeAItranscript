@@ -1,0 +1,13 @@
+version: "4.40"
+
+services:
+  app:
+    build: .
+    container_name: youtube-ai-transcript
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
