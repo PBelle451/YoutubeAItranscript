@@ -1,5 +1,4 @@
-# YOUTUBE AI TRANSCRIPT PROJECT
-# ONLY COMPATIBLE WITH PYTHON 3.11 VERSION SO FAR
+# YOUTUBE AI TRANSCRIPT PROJECT - ONLY COMPATIBLE WITH PYTHON 3.11 VERSION SO FAR
 by Pedro B. Castro
 This project is an AI project made with Python, Flask and the Whisper library by Open AI. 
 
