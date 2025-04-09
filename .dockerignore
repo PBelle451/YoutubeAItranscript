@@ -1,26 +1,25 @@
+# Ignora ambientes virtuais
+.venv/
+venv/
+env/
+
 # Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Ambientes virtuais
-.venv/
-env/
-venv/
-
-# Arquivos de áudio e texto gerados
+# Arquivos gerados
 *.mp3
-*.wav
 *.txt
 resumo_video.txt
 video_audio.mp3
 
+# Arquivos de configuração sensíveis
+.env
+
 # Logs
 *.log
-
-# Configurações de ambiente
-.env
 
 # Dados temporários
 tmp/
@@ -28,15 +27,13 @@ temp/
 .cache/
 datasets/
 
-# Diretórios de controle de versão
+# Git e editor configs
 .git/
 .gitignore
-
-# Arquivos de IDEs/editors
 .vscode/
 .idea/
 *.swp
 
-# Docker
+# Docker configs indesejados
 Dockerfile~
 docker-compose.override.yml

@@ -1,13 +1,14 @@
-# Etapa 1: Base Python
+# Etapa 1: imagem base com Python 3.11
 FROM python:3.11-slim
 
-# Etapa 2: Variáveis e dependências básicas
+# Etapa 2: evitar arquivos bytecode e buffer
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
+# Etapa 3: diretório de trabalho
 WORKDIR /app
 
-# Atualiza o sistema e instala dependências do sistema
+# Etapa 4: instalar dependências do sistema
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     git \
@@ -15,16 +16,16 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Copia os arquivos do projeto
-COPY requirements.txt .
+# Etapa 5: copiar apenas o requirements.txt e instalar as libs primeiro
+COPY requirements.txt . 
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia o restante dos arquivos
-COPY . .
+# Etapa 6: copiar o restante do projeto
+COPY . /app/
 
-# Expõe a porta do Flask
+# Etapa 7: expor a porta
 EXPOSE 5000
 
-# Roda o app Flask
+# Etapa 8: comando para rodar o app
 CMD ["python", "app.py"]
