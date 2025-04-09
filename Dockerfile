@@ -16,10 +16,15 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Etapa 5: copiar apenas o requirements.txt e instalar as libs primeiro
-COPY requirements.txt . 
+# Etapa 5: instalar as libs primeiro
+
+# NÃO MEXA AQUI
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install Flask
+RUN pip install openai-whisper
+RUN pip install transformers
+RUN pip install torch
+RUN pip install yt-dlp
 
 # Etapa 6: copiar o restante do projeto
 COPY . /app/

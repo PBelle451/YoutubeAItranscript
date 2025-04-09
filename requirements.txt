@@ -1,5 +1,5 @@
-Flask==2.3.3
-openai-whisper==20231117
-transformers==4.39.3
-torch==2.2.1
-yt-dlp==2024.03.10
+Flask
+openai-whisper
+transformers
+torch
+yt-dlp

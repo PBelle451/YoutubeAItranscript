@@ -1,4 +1,3 @@
-version: "4.40"
 
 services:
   app:
